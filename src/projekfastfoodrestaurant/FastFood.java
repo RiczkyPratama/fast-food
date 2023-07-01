@@ -10,7 +10,52 @@ import javax.swing.JOptionPane;
  */
 public class FastFood extends javax.swing.JFrame {
     private JFrame frame;
+    
+    //deklarasi atau memberi nilai harga pada masing masing variable
+    //deklarasi meat dan vegetarian
+    double Price_Fries = 1.1;
+    double Price_Salad = 1.2;
+    double Price_Hamburger = 2.27;
+    double Price_OnionRings = 0.56;
+    double Price_ChickenSalad = 2.2;
+    
+    //deklarasi sandwich
+    double Price_FishSandwich = 2.7;
+    double Price_CheeseSandwich = 2.2;
+    double Price_ChickenSandwich = 2.2;
+    
+    //deklarasi dessert
+    double Price_HashBrown = 2.5;
+    double Price_ToastedBagel = 1.6;
+    double Price_PineapleStick = 1.7;
+    double Price_ChocolateMuffin = 1.8;
+    double Price_PancakeSyrup = 1.2;
+    
+    //deklarasi drink
+    double Price_Tea = 2.25;
+    double Price_Cola = 0.89;
+    double Price_Coffee = 1.5;
+    double Price_Orange = 1.5;
     double Price_BottleWater = 1.9;
+    
+    //deklarasi shakes
+    double Price_VanillaCone = 1.5;
+    double Price_VanillaShakes = 1.7;
+    double Price_StrawberryShakes = 1.4;
+    double Price_ChocolateMilkShakes = 1.2;
+    
+    //deklarasi hasil perhitungan
+    double Tax_Rate = 3.7;
+    
+    double iTax, iTotal, iSubTotal, iChange, iCost;
+    
+    double[] itemcost = new double[22]; //ini adalah array
+    
+    
+    
+    
+    
+    
 
     /**
      * Creates new form FastFood
@@ -97,7 +142,7 @@ public class FastFood extends javax.swing.JFrame {
         jTxtMoney = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jBtnExit = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jBtnTotal = new javax.swing.JButton();
         jBtnReset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -700,9 +745,14 @@ public class FastFood extends javax.swing.JFrame {
         });
         getContentPane().add(jBtnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 620, 110, 50));
 
-        jButton2.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        jButton2.setText("Total");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 619, 110, 50));
+        jBtnTotal.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        jBtnTotal.setText("Total");
+        jBtnTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnTotalActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBtnTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 619, 110, 50));
 
         jBtnReset.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         jBtnReset.setText("Reset");
@@ -1299,6 +1349,19 @@ public class FastFood extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtMoneyActionPerformed
 
+    private void jBtnTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTotalActionPerformed
+        // TODO add your handling code here:
+        
+        itemcost[0] = Double.parseDouble(jTxtFries.getName());
+        itemcost[1] = Double.parseDouble(jTxtSalad.getName());
+        itemcost[2] = Double.parseDouble(jTxtHamburger.getName());
+        itemcost[3] = Double.parseDouble(jTxtOnionRings.getName());
+        itemcost[4] = Double.parseDouble(jTxtChickenSalad.getName());
+        itemcost[5] = Double.parseDouble(jTxtFishSandwich.getName());
+        itemcost[6] = Double.parseDouble(jTxtCheeseSandwich.getName());
+        itemcost[7] = Double.parseDouble(jTxtChickenSandwich.getName());
+    }//GEN-LAST:event_jBtnTotalActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1347,7 +1410,7 @@ public class FastFood extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnExit;
     private javax.swing.JButton jBtnReset;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jBtnTotal;
     private javax.swing.JCheckBox jChkBottleWater;
     private javax.swing.JCheckBox jChkCheeseSandwich;
     private javax.swing.JCheckBox jChkChickenSalad;

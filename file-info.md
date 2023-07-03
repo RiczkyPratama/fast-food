@@ -1,4 +1,7 @@
 file-info adalah file yang berisi beberapa info mengenai projek ini.
+Profil pembuat program fast-food.java :
+Nama : Riczky Pratama
+Instagram : @silver_rabbitku
 
 =====xoxo=====
 
